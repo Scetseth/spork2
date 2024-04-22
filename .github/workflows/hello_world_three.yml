@@ -26,6 +26,7 @@ jobs:
           npm run build
           php artisan serve --host=0.0.0.0 --port=8000 &
       - run: npx playwright install
+      - run: npx playwright install-deps
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - run: npx playwright test
