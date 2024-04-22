@@ -17,12 +17,6 @@ jobs:
           php-version: '8.3'
       - run: composer install
         composer install
-        cp .env.example .env
-        php artisan key:generate
-        touch database/database.sqlite
-        php artisan migrate
-        npm ci
-        npm run build
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - run: vendor/bin/phpstan analyse
